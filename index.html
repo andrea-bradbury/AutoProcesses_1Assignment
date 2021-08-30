@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Number Guessing Game</title>
+
+  <style>
+    html {
+      font-family: "Apercu",-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+    }
+
+    body {
+      width: 70%;
+      max-width: 800px;
+      min-width: 480px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+
+<body>
+<h1>Guessing Game</h1>
+
+<p>A number between 0 -99 has been generated.
+  Start guessing...</p>
+
+<div class="form">
+  <label for="guessField">Enter your guess: </label>
+  <input type = "text" id = "guessField" class = "guessField">
+  <input type = "submit" value = "Submit"
+         class = "guessSubmit" id = "submitguess">
+</div>
+
+<script type = "text/javascript">
+
+  // randomly generated number
+  var number = Math.floor(Math.random() * 99 + 1);
+
+  // guess count
+  var guessCount = 1;
+
+
+  document.getElementById("submitguess").onclick = function()
+  {
+
+    // number guessed by user
+    var guess = document.getElementById("guessField").value;
+
+    if(isNaN(guess))
+    {
+      alert("Please enter a valid number.");
+    }
+
+    else if (guess == number)
+    {
+      alert("Congratulations, you guessed the number "
+        + number + " in " + guessCount + " guesses.");
+    }
+    else if (guess > number)
+    {
+      guessCount+=1;
+      alert("Incorrect, try a smaller number...");
+    }
+    else if (guess < number)
+    {
+      guessCount+=1;
+      alert("Incorrect, try a bigger number...")
+    }
+
+  }
+</script>
+</body>
+</html>
