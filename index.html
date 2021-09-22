@@ -3,20 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>Number Guessing Game, Andrea's Assignment 1</title>
-
-  <style>
-    /* Basic CSS for game*/
-    html {
-      font-family: "Apercu",-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-    }
-
-    body {
-      width: 70%;
-      max-width: 800px;
-      min-width: 480px;
-      margin: 0 auto;
-    }
-  </style>
+  <link href="css/main.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -28,12 +15,12 @@
 
 <div class="form">
   <label for="guessField">Enter your guess: </label>
-  <input type = "text" id = "guessField" class = "guessField">
-  <input type = "submit" value = "Submit"
-         class = "guessSubmit" id = "submitguess">
+  <input type = "text"  class = "guessField" id="guessField" >
+  <input type = "submit" value = "Submit" class = "guessSubmit" id="submitGuess">
 </div>
 
-<script type = "text/javascript">
+
+<script>
 
   // randomly generated number
   var number = Math.floor(Math.random() * 99 + 1);
@@ -42,7 +29,7 @@
   var guessCount = 0;
 
 
-  document.getElementById("submitguess").onclick = function()
+  document.getElementById("submitGuess").onclick = function()
   {
 
     // number guessed by user
@@ -76,6 +63,10 @@
 
 
   }
+
 </script>
+
+
+
 </body>
 </html>
